@@ -1,7 +1,9 @@
 import numpy as np
 
-from create_sample_data.create_data import create_sample_regression_data
-from define_cost_function import h, cost
+from scripts.test import create_sample_set
+from scripts.define_cost_function import h, cost
+
+X, y = create_sample_set()
 
 def grad(w,X,y):
 
@@ -15,8 +17,8 @@ def grad(w,X,y):
 
 def descent(w_new, w_prev, lr):
 
-#     print(w_prev)
-#     print(cost(w_prev,X,y))
+    print(w_prev)
+    print(cost(w_prev,X,y))
 
     j = 0 # keep track of number of iterations
 
@@ -27,11 +29,15 @@ def descent(w_new, w_prev, lr):
 
         w_new = [w0, w1]
 
-#         print(w_new)
-#         print(cost(w_new,X,y))
+        print(w_new)
+        print(cost(w_new,X,y))
 
         if (w_new[0] - w_prev[0]) ** 2 + (w_new[1] - w_prev[1]) ** 2 <= pow(10,-2):
             return w_new
         if j > 500:
             return w_new
         j+=1
+
+w = input("test: ")
+
+print(descent(w,w,0.1))

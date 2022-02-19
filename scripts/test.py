@@ -1,7 +1,7 @@
 from sklearn.datasets._samples_generator import make_regression
 
 
-def create_sample_regression_data(df):
+def create_sample_set():
 
     """
     Create sample regression dataset with 1 feature and length 200
@@ -14,5 +14,4 @@ def create_sample_regression_data(df):
                             random_state=200)
             )
 
-    return X,y
-
+    return X, y

@@ -1,7 +1,7 @@
 import numpy as np
-from create_sample_data.create_data import create_sample_regression_data
+from scripts.test import create_sample_set
 
-
+X,y = create_sample_set()
 def h(X,w):
 
     """
